@@ -1,13 +1,16 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Menu from "./components/Menu";
+import { useEffect } from "react";
 
 const App = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
+  const navigate = useNavigate();
 
-  if (pathname === "/") {
-    return <Navigate to={"/sorting/bubble"} />;
-  }
+  useEffect(() => {
+    if (pathname === "/") {
+      return navigate("/sorting/bubble");
+    }
+  }, [pathname]);
   return (
     <div className="h-screen overflow-hidden bg-blue-100 relative flex">
       <Menu />
