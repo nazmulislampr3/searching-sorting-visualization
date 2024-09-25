@@ -1,4 +1,4 @@
-import { Navigate, Outlet, redirect, useLocation } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import Menu from "./components/Menu";
 
 const App = () => {
